@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <style>
+      .box {
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+      }
+      .normal {
+        background-color: gray;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .purple {
+        background-color: purple;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  </head>
+  <body>
+    <h1>Cool Game</h1>
+    <div>
+      <div class="normal box">0,0</div>
+      <div class="normal box">0,1</div>
+      <div class="normal box">0,2</div>
+    </div>
+    <div>
+      <div class="normal box">1,0</div>
+      <div class="normal box">1,1</div>
+      <div class="normal box">1,2</div>
+    </div>
+    <div>
+      <div class="normal box">2,0</div>
+      <div class="normal box">2,1</div>
+      <div class="normal box">2,2</div>
+    </div>
+    <script>
+      var boxes = document.getElementsByClassName('box');
+      var turn = 'yellow';
+
+      $('.box').click(function() {
+        if(turn === 'yellow') {
+          turn = 'purple';
+        } else {
+          turn = 'yellow';
+        }
+        $(this).removeClass();
+        $(this).addClass(turn + ' box');
+      });
+    </script>
+  </body>
+</html>
